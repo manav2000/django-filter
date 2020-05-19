@@ -1,0 +1,22 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+
+<body>
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for film in filter.qs %}
+        <li><b>{{ film.title }}</b></li>
+        <span>ratings:{{film.ratings}}</span><br>
+        <span>price:{{film.price}}$</span> {% endfor %}
+    </ul>
+</body>
+
+</html>
